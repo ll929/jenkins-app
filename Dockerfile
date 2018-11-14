@@ -88,9 +88,9 @@ ENV PATH $PATH:/opt/gradle-4.4/bin
 
 # Init dependencies for the setup process
 RUN dpkg --add-architecture i386
-RUN apt-get -y update && \
-    apt-get update && \
-	apt-get install software-properties-common python-software-properties unzip -y
+RUN apt-get update && \
+    apt-get install unzip -y
+#	apt-get install software-properties-common python-software-properties unzip -y
 
 # Install gradle
 ADD $GRADLE_ZIP_URL /opt/
