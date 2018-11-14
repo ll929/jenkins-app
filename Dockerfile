@@ -2,8 +2,8 @@ FROM jenkins/jenkins:lts
 
 USER root
 
-RUN groupadd --gid 1000 node \
-  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+RUN groupadd --gid 1113 node \
+  && useradd --uid 1113 --gid node --shell /bin/bash --create-home node
 
 # gpg keys listed at https://github.com/nodejs/node#release-team
 RUN set -ex \
