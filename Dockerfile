@@ -88,7 +88,7 @@ ENV PATH $PATH:/opt/gradle-4.4/bin
 
 # Init dependencies for the setup process
 RUN dpkg --add-architecture i386
-RUN sudo apt-get -y update && \
+RUN apt-get -y update && \
     apt-get update && \
 	apt-get install software-properties-common python-software-properties unzip -y
 
