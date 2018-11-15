@@ -170,18 +170,18 @@ RUN yes | sdkmanager \
     "build-tools;19.1.0"
 RUN yes | sdkmanager \
     "build-tools;17.0.0"
-RUN yes | sdkmanager \
-    "system-images;android-28;google_apis;x86"
-RUN yes | sdkmanager \
-    "system-images;android-26;google_apis;x86"
-RUN yes | sdkmanager \
-    "system-images;android-25;google_apis;armeabi-v7a"
-RUN yes | sdkmanager \
-    "system-images;android-24;default;armeabi-v7a"
-RUN yes | sdkmanager \
-    "system-images;android-22;default;armeabi-v7a"
-RUN yes | sdkmanager \
-    "system-images;android-19;default;armeabi-v7a"
+#RUN yes | sdkmanager \
+#    "system-images;android-28;google_apis;x86"
+#RUN yes | sdkmanager \
+#    "system-images;android-26;google_apis;x86"
+#RUN yes | sdkmanager \
+#    "system-images;android-25;google_apis;armeabi-v7a"
+#RUN yes | sdkmanager \
+#    "system-images;android-24;default;armeabi-v7a"
+#RUN yes | sdkmanager \
+#    "system-images;android-22;default;armeabi-v7a"
+#RUN yes | sdkmanager \
+#    "system-images;android-19;default;armeabi-v7a"
 RUN yes | sdkmanager \
     "extras;android;m2repository"
 RUN yes | sdkmanager \
