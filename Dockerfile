@@ -182,9 +182,9 @@ RUN apt-get purge maven maven2 \
 # --- Install Ruby
 
 RUN apt-get update \
- && apt-get install ruby-dev \
- && Y \
- && apt-get -y install rubygems
+ && apt-get install ruby-dev
+ 
+RUN Y | apt-get -y install rubygems
 
 
 # ------------------------------------------------------
