@@ -198,7 +198,7 @@ RUN gem install fastlane --no-document \
 # ------------------------------------------------------
 # --- Cleanup and rev num
 
-# Cleaning
+# Cleaning   
 RUN apt-get clean
 
 ENV BITRISE_DOCKER_REV_NUMBER_ANDROID v2018_11_14_1
