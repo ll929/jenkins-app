@@ -114,7 +114,7 @@ RUN sdkmanager "emulator" "tools" "platform-tools"
 # The `yes` is for accepting all non-standard tool licenses.
 
 # Please keep all sections in descending order!
-RUN yes | sdkmanager \
+RUN sdkmanager \
     "platforms;android-28"
 #    "platforms;android-27" \
 #    "platforms;android-26" \
