@@ -183,7 +183,9 @@ RUN apt-get purge maven maven2 \
 
 RUN apt-get update \
  && apt-get -y install ruby-dev \
- && apt-get -y install rubygems
+ && apt-get -y install rubygems \
+ && apt-get -y install build-essential patch \
+ && apt-get -y install libgmp-dev
 
 
 # ------------------------------------------------------
