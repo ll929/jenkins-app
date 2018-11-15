@@ -179,6 +179,16 @@ RUN apt-get purge maven maven2 \
 
 
 # ------------------------------------------------------
+# --- Install Ruby
+
+RUN apt-add-repository ppa:brightbox/ruby-ng \
+ && apt-get update \
+ && apt-get -y install --no-install-recommends \
+    ruby2.4 \
+    ruby2.4-dev
+
+
+# ------------------------------------------------------
 # --- Install Fastlane
 
 RUN gem install fastlane --no-document \
