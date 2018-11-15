@@ -183,12 +183,12 @@ RUN apt-get purge maven maven2 \
 
 RUN apt-get update \
  && apt-get -y install rubygems
- 
+
 
 # ------------------------------------------------------
 # --- Install Fastlane
 
-RUN gem install fastlane --no-document \
+RUN gem install fastlane -NV \
  && fastlane --version
 
 
