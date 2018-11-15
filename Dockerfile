@@ -68,6 +68,14 @@ RUN set -ex \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
 
+
+# Install react-native
+# ------------------------------------------------------
+
+RUN yarn global add react-native-cli
+
+# ------------------------------------------------------
+
 ENV ANDROID_HOME /opt/android-sdk-linux
 
 # ------------------------------------------------------
@@ -245,7 +253,7 @@ RUN apt-get clean
 ENV BITRISE_DOCKER_REV_NUMBER_ANDROID v2018_11_14_1
 
 
-USER jenkins
+#USER jenkins
 
 EXPOSE 8080
 EXPOSE 50000
