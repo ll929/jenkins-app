@@ -74,6 +74,11 @@ RUN set -ex \
 
 RUN yarn global add react-native-cli
 
+# Install appcenter
+# ------------------------------------------------------
+
+RUN yarn global add appcenter-cli
+
 # ------------------------------------------------------
 
 ENV ANDROID_HOME /opt/android-sdk-linux
