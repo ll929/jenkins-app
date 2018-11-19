@@ -80,6 +80,32 @@ RUN yarn global add react-native-cli
 
 RUN yarn global add appcenter-cli
 
+# Install watchman
+# ------------------------------------------------------
+
+ENV WATCH_MAN_VERSION 4.9.0
+
+RUN apt-get update \
+ && apt-get -y install libssl-dev \
+ && apt-get -y install autoconf \
+ && apt-get -y install automake \
+ && apt-get -y install libtool \
+ && apt-get -y install pkg-config
+
+RUN cd /opt \
+ && wget -q https://codeload.github.com/facebook/watchman/zip/v${WATCH_MAN_VERSION} -O watchman.zip \
+ && unzip -q watchman.zip -d /opt/watchman \
+ && cd /opt/watchman \
+ && ./autogen.sh \
+ && ./configure \
+ && make \
+ && make install \
+ && cd /opt \
+ && rm watchman.zip \
+ && rm -rf watchman
+
+RUN watchman --version
+
 # ------------------------------------------------------
 
 ENV ANDROID_HOME /opt/android-sdk-linux
