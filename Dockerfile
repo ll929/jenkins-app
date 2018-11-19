@@ -96,8 +96,11 @@ RUN cd /opt \
  && wget -q https://codeload.github.com/facebook/watchman/zip/v${WATCH_MAN_VERSION} -O watchman.zip \
  && unzip -q watchman.zip -d /opt/watchman \
  && cd /opt/watchman \
- && autogen.sh \
- && configure \
+ && ls
+
+
+RUN ./autogen.sh \
+ && ./configure \
  && make \
  && make install \
  && cd /opt \
