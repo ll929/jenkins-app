@@ -94,13 +94,12 @@ RUN apt-get update \
 
 RUN cd /opt \
  && wget -q https://codeload.github.com/facebook/watchman/zip/v${WATCH_MAN_VERSION} -O watchman.zip \
- && unzip -q watchman.zip -d /opt/watchman \
- && cd /opt/watchman \
- && ls
+ && unzip -q watchman.zip -d /opt/watchman
 
+RUN /opt/watchman/autogen.sh
+RUN /opt/watchman/configure
 
-RUN ./autogen.sh \
- && ./configure \
+RUN cd /opt/watchman \
  && make \
  && make install \
  && cd /opt \
