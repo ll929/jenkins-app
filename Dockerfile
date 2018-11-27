@@ -90,8 +90,9 @@ RUN apt-get update \
  && apt-get -y install autoconf \
  && apt-get -y install automake \
  && apt-get -y install libtool \
- && apt-get -y install pkg-config
-
+ && apt-get -y install pkg-config \
+ && apt-get -y install gcc-7.3.0 \
+ && apt-get -y install g++-7.3.0
 RUN gcc -v
 
 RUN cd /opt \
