@@ -92,6 +92,8 @@ RUN apt-get update \
  && apt-get -y install libtool \
  && apt-get -y install pkg-config
 
+RUN gcc -v
+
 RUN cd /opt \
  && wget -q https://codeload.github.com/facebook/watchman/zip/v${WATCH_MAN_VERSION} -O watchman.zip \
  && unzip -q watchman.zip -d /opt/watchman \
