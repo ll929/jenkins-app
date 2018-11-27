@@ -94,12 +94,11 @@ RUN apt-get update \
 
 RUN cd /opt \
  && wget -q https://codeload.github.com/facebook/watchman/zip/v${WATCH_MAN_VERSION} -O watchman.zip \
- && unzip -q watchman.zip -d /opt/watchman
-
-RUN /opt/watchman/autogen.sh
-RUN /opt/watchman/configure
-
-RUN cd /opt/watchman \
+ && unzip -q watchman.zip -d /opt/watchman \
+# TODO 4.9.0 文件夹
+ && cd /opt/watchman/watchman-${WATCH_MAN_VERSION} \
+ && ./autogen.sh \
+ && ./configure \
  && make \
  && make install \
  && cd /opt \
