@@ -290,11 +290,11 @@ RUN set -ex; \
 ENV WATCH_MAN_VERSION 4.9.0
 
 RUN apt-get update \
- && apt-get -y install libssl-dev \
+# && apt-get -y install libssl-dev \
  && apt-get -y install python-dev \
- && apt-get -y install autoconf \
- && apt-get -y install automake \
- && apt-get -y install libtool \
+# && apt-get -y install autoconf \
+# && apt-get -y install automake \
+# && apt-get -y install libtool \
  && apt-get -y install pkg-config
 
 RUN gcc -v
@@ -304,7 +304,7 @@ RUN cd /opt \
  && unzip -q watchman.zip -d /opt/watchman \
  && cd /opt/watchman/watchman-${WATCH_MAN_VERSION} \
  && ./autogen.sh \
- && ./configure \
+ && ./configure --enable-lenient \
  && make \
  && make install \
  && cd /opt \
